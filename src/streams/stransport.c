@@ -5,6 +5,8 @@
  * a Linking Exception. For full terms see the included COPYING file.
  */
 
+#include "streams/stransport.h"
+
 #ifdef GIT_SECURE_TRANSPORT
 
 #include <CoreFoundation/CoreFoundation.h>
@@ -13,8 +15,8 @@
 
 #include "git2/transport.h"
 
-#include "socket_stream.h"
-#include "curl_stream.h"
+#include "streams/socket.h"
+#include "streams/curl.h"
 
 static int stransport_error(OSStatus ret)
 {

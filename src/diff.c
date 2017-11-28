@@ -4,9 +4,10 @@
  * This file is part of libgit2, distributed under the GNU GPL v2 with
  * a Linking Exception. For full terms see the included COPYING file.
  */
-#include "git2/version.h"
-#include "common.h"
+
 #include "diff.h"
+
+#include "git2/version.h"
 #include "diff_generate.h"
 #include "patch.h"
 #include "commit.h"
@@ -516,5 +517,6 @@ int git_diff_patchid(git_oid *out, git_diff *diff, git_diff_patchid_options *opt
 	git_oid_cpy(out, &args.result);
 
 out:
+	git_hash_ctx_cleanup(&args.ctx);
 	return error;
 }
